@@ -51,7 +51,7 @@ module.exports = function Banker(mod) {
     }
   });
 
-  mod.hook('S_VIEW_WARE_EX', 2, event => {
+  mod.hook('S_VIEW_WARE_EX', 3, event => {
     if (!mod.game.me.is(event.gameId))
         return;
     
