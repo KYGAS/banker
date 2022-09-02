@@ -55,7 +55,7 @@ module.exports = function Banker(mod) {
     if (!mod.game.me.is(event.gameId))
         return;
     
-    if (event.type == BANK_TYPE) {
+    if (event.container == BANK_TYPE) {
       currentContract = BANK_CONTRACT;
       bankInventory = event;
       if (onNextOffset) onNextOffset(event);
@@ -271,7 +271,7 @@ module.exports = function Banker(mod) {
   function depositItem(bagItem, offset) {
     mod.send('C_PUT_WARE_ITEM', 3, {
       gameId: mod.game.me.gameId,
-      type: BANK_TYPE,
+      container: BANK_TYPE,
       page: offset,
       money: 0,
       pocket: 0,
